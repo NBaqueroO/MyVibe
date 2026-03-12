@@ -6,6 +6,7 @@ import { TooltipProvider } from "@/components/ui/tooltip";
 import Index from "./pages/Index.tsx";
 import NotFound from "./pages/NotFound.tsx";
 import UploadsPage from "./pages/Hub/UploadPage.tsx";
+import MusicPage from "./pages/Hub/musicPage.tsx"
 import { I18nProvider } from "./contexts/I18nContext.tsx";
 
 
@@ -38,7 +39,7 @@ const App = () => (
             {/* Páginas del hub */}
             <Route path="/hub/uploads"   element={<UploadsPage />} />
             {/* Aquí pongan sus páginas solo cambien el elemento de uploads a lo que les corresponda */}
-
+            <Route path="/hub/music"   element={<MusicPage />} />
             {/* DEJAR ESTO AL FINAL NO PONER NADA DEBAJO*/}
             <Route path="*" element={<NotFound />} />
           </Routes>
