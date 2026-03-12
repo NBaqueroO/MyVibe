@@ -1,8 +1,30 @@
 import React, { createContext, useContext, useState, ReactNode } from "react";
+import { toast } from "sonner";
 
 type Locale = "es" | "en";
 
-const translations = {
+type HubUploads = {
+  title: string;
+  subtitle: string;
+  uploadBtn: string;
+  searchPlaceholder: string;
+  totalPlays: string;
+  totalLikes: string;
+  filesUploaded: string;
+  published: string;
+  draft: string;
+};
+
+type Translations = {
+  nav: { explore: string; trends: string; community: string; login: string; register: string };
+  hero: { badge: string; titleStart: string; titleAccent: string; description: string; connectSpotify: string; viewDemo: string; joined: string; topArtists: string; genre: string; listeningNow: string; proUser: string };
+  steps: { title: string; subtitle: string; step1Title: string; step1Desc: string; step2Title: string; step2Desc: string; step3Title: string; step3Desc: string };
+  cta: { title: string; button: string };
+  footer: { tagline: string; product: string; features: string; api: string; pricing: string; company: string; about: string; blog: string; careers: string; legal: string; privacy: string; terms: string; cookies: string; rights: string; language: string };
+  hub: { uploads: HubUploads };
+};
+
+const translations: Record<Locale, Translations> = {
   es: {
     nav: {
       explore: "Explorar",
@@ -54,6 +76,19 @@ const translations = {
       cookies: "Cookies",
       rights: "© 2024 MyVibe Inc. Todos los derechos reservados.",
       language: "Español (ES)",
+    },
+    hub: {
+      uploads: {
+        title: "Mis Subidas",
+        subtitle: "Gestiona y analiza el rendimiento de tus canciones publicadas.",
+        uploadBtn: "+ Subir Nuevo",
+        searchPlaceholder: "Buscar en mis archivos...",
+        totalPlays: "Total Reproducciones",
+        totalLikes: "Total Likes",
+        filesUploaded: "Archivos Subidos",
+        published: "PUBLICADO",
+        draft: "BORRADOR",
+      },
     },
   },
   en: {
@@ -108,10 +143,21 @@ const translations = {
       rights: "© 2024 MyVibe Inc. All rights reserved.",
       language: "English (EN)",
     },
+    hub: {
+      uploads: {
+        title: "My Uploads",
+        subtitle: "Manage and analyze the performance of your published tracks.",
+        uploadBtn: "+ Upload New",
+        searchPlaceholder: "Search my files...",
+        totalPlays: "Total Plays",
+        totalLikes: "Total Likes",
+        filesUploaded: "Files Uploaded",
+        published: "PUBLISHED",
+        draft: "DRAFT",
+      },
+    },
   },
-} as const;
-
-type Translations = typeof translations.es | typeof translations.en;
+};
 
 interface I18nContextType {
   locale: Locale;
@@ -124,7 +170,13 @@ const I18nContext = createContext<I18nContextType | null>(null);
 export const I18nProvider = ({ children }: { children: ReactNode }) => {
   const [locale, setLocale] = useState<Locale>("es");
 
-  const toggleLocale = () => setLocale((l) => (l === "es" ? "en" : "es"));
+  const toggleLocale = () => {
+    const next = locale === "es" ? "en" : "es";
+    setLocale(next);
+    toast(next === "en" ? "Language changed to English" : "Idioma cambiado a Español", {
+      duration: 2000,
+    });
+  };
 
   return (
     <I18nContext.Provider value={{ locale, t: translations[locale], toggleLocale }}>

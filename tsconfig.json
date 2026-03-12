@@ -1,5 +1,7 @@
 {
   "compilerOptions": {
+    "moduleResolution": "node",
+    "jsx": "preserve",
     "allowJs": true,
     "noImplicitAny": false,
     "noUnusedLocals": false,

@@ -18,7 +18,7 @@ const Navbar = () => {
         </div>
 
         <div className="hidden items-center gap-8 md:flex">
-          <a href="#" className="text-sm text-muted-foreground transition-colors hover:text-foreground">{t.nav.explore}</a>
+          <a href="/hub/uploads/" className="text-sm text-muted-foreground transition-colors hover:text-foreground">{t.nav.explore}</a>
           <a href="#" className="text-sm text-muted-foreground transition-colors hover:text-foreground">{t.nav.trends}</a>
           <a href="#" className="text-sm text-muted-foreground transition-colors hover:text-foreground">{t.nav.community}</a>
         </div>
