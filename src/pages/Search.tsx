@@ -1,8 +1,5 @@
 import { I18nProvider } from "@/contexts/I18nContext";
 import Navbar from "@/components/Navbar";
-import HeroSection from "@/components/landingPageComponents/HeroSection";
-import StepsSection from "@/components/landingPageComponents/StepsSection";
-import CtaSection from "@/components/landingPageComponents/CtaSection";
 import Footer from "@/components/Footer";
 
 const Index = () => {
@@ -10,9 +7,6 @@ const Index = () => {
     <I18nProvider>
       <div className="min-h-screen bg-background">
         <Navbar />
-        <HeroSection />
-        <StepsSection />
-        <CtaSection />
         <Footer />
       </div>
     </I18nProvider>
