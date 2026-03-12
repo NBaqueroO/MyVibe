@@ -1,7 +1,10 @@
-import { Music } from "lucide-react";
+import { Music, Globe } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { useI18n } from "@/contexts/I18nContext";
 
 const Navbar = () => {
+  const { t, locale, toggleLocale } = useI18n();
+
   return (
     <nav className="fixed top-0 left-0 right-0 z-50 border-b border-border bg-background/80 backdrop-blur-xl">
       <div className="container flex h-16 items-center justify-between">
@@ -15,17 +18,24 @@ const Navbar = () => {
         </div>
 
         <div className="hidden items-center gap-8 md:flex">
-          <a href="#" className="text-sm text-muted-foreground transition-colors hover:text-foreground">Explorar</a>
-          <a href="#" className="text-sm text-muted-foreground transition-colors hover:text-foreground">Tendencias</a>
-          <a href="#" className="text-sm text-muted-foreground transition-colors hover:text-foreground">Comunidad</a>
+          <a href="#" className="text-sm text-muted-foreground transition-colors hover:text-foreground">{t.nav.explore}</a>
+          <a href="#" className="text-sm text-muted-foreground transition-colors hover:text-foreground">{t.nav.trends}</a>
+          <a href="#" className="text-sm text-muted-foreground transition-colors hover:text-foreground">{t.nav.community}</a>
         </div>
 
         <div className="flex items-center gap-3">
+          <button
+            onClick={toggleLocale}
+            className="flex items-center gap-1.5 rounded-md px-3 py-1.5 text-sm text-muted-foreground transition-colors hover:bg-secondary hover:text-foreground"
+          >
+            <Globe className="h-4 w-4" />
+            {locale === "es" ? "EN" : "ES"}
+          </button>
           <Button variant="ghost" className="text-muted-foreground hover:text-foreground">
-            Iniciar Sesión
+            {t.nav.login}
           </Button>
           <Button className="bg-primary text-primary-foreground hover:bg-primary/90">
-            Registrarse
+            {t.nav.register}
           </Button>
         </div>
       </div>
