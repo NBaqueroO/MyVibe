@@ -1,34 +1,21 @@
 import { Link2, Palette, Share2 } from "lucide-react";
-
-const steps = [
-  {
-    icon: Link2,
-    title: "1. Conecta",
-    description: "Vincula tu cuenta de Spotify de forma segura. Nosotros analizamos tus hábitos de escucha para crear tu perfil único.",
-  },
-  {
-    icon: Palette,
-    title: "2. Personaliza",
-    description: "Elige tus géneros y artistas favoritos para mostrar. Selecciona el esquema de colores que mejor combine con tu aura musical.",
-  },
-  {
-    icon: Share2,
-    title: "3. Comparte",
-    description: "Envía tu MyVibe a tus amigos, añádelo a tu bio de Instagram o compártelo en tus redes sociales favoritas.",
-  },
-];
+import { useI18n } from "@/contexts/I18nContext";
 
 const StepsSection = () => {
+  const { t } = useI18n();
+
+  const steps = [
+    { icon: Link2, title: t.steps.step1Title, description: t.steps.step1Desc },
+    { icon: Palette, title: t.steps.step2Title, description: t.steps.step2Desc },
+    { icon: Share2, title: t.steps.step3Title, description: t.steps.step3Desc },
+  ];
+
   return (
     <section className="py-24">
       <div className="container">
         <div className="mx-auto max-w-2xl text-center">
-          <h2 className="font-heading text-3xl font-bold text-foreground sm:text-4xl">
-            Tu perfil, en tres pasos.
-          </h2>
-          <p className="mt-4 text-muted-foreground">
-            Diseñado para que la música sea el centro de tu identidad digital sin complicaciones.
-          </p>
+          <h2 className="font-heading text-3xl font-bold text-foreground sm:text-4xl">{t.steps.title}</h2>
+          <p className="mt-4 text-muted-foreground">{t.steps.subtitle}</p>
         </div>
 
         <div className="mt-16 grid gap-6 md:grid-cols-3">
@@ -36,7 +23,6 @@ const StepsSection = () => {
             <div
               key={step.title}
               className="group rounded-2xl border border-border bg-card p-8 transition-all hover:border-primary/40 hover:shadow-lg"
-              style={{ transition: "box-shadow 0.3s, border-color 0.3s" }}
             >
               <div className="mb-6 flex h-12 w-12 items-center justify-center rounded-xl bg-primary/10">
                 <step.icon className="h-6 w-6 text-primary" />
