@@ -111,7 +111,7 @@ const translations = {
   },
 } as const;
 
-type Translations = typeof translations.es;
+type Translations = typeof translations.es | typeof translations.en;
 
 interface I18nContextType {
   locale: Locale;
