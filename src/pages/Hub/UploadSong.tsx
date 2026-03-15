@@ -274,7 +274,7 @@ export default function UploadSong() {
             <button 
               type="button" 
               className="cancel-btn"
-              onClick={() => navigate('/hub/songs')}
+              onClick={() => navigate('/hub/uploads')}
             >
               Cancel
             </button>
