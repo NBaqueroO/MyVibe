@@ -4,7 +4,7 @@ import Topbar from "@/components/hubComponents/search/TopBar";
 import UploadGrid from "@/components/hubComponents/search/UploadGrid";
 import StatsCard from "@/components/hubComponents/search/StatsCard";
 import { Song } from "@/types/Song";
-import { useT } from "@/hooks/UseTranslations";
+import { useT } from "@/hooks/useTranslations";
 
 const songs: Song[] = [
   {

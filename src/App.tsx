@@ -6,6 +6,7 @@ import { TooltipProvider } from "@/components/ui/tooltip";
 import Index from "./pages/Index.tsx";
 import NotFound from "./pages/NotFound.tsx";
 import UploadsPage from "./pages/Hub/UploadPage.tsx";
+import MusicPage from "./pages/Hub/musicPage.tsx"
 import { I18nProvider } from "./contexts/I18nContext.tsx";
 import SignInPage from "./pages/Hub/SignInPage.tsx";
 import SignUpPage from "./pages/Hub/SignUpPage.tsx";
@@ -49,6 +50,7 @@ const App = () => (
             <Route path="/hub/profile" element={<ProfilePage />} />
             <Route path="/hub/delete-user" element={<DeleteUserPage />} />
 
+            <Route path="/hub/music"   element={<MusicPage />} />
             {/* DEJAR ESTO AL FINAL NO PONER NADA DEBAJO*/}
             <Route path="*" element={<NotFound />} />
           </Routes>
