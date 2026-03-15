@@ -14,6 +14,7 @@ import ForgotPasswordPage from "./pages/Hub/ForgotPasswordPage.tsx";
 import ProfilePage from "./pages/Hub/ProfilePage.tsx";
 import DeleteUserPage from "./pages/Hub/DeleteUserPage.tsx";
 import UploadSong from "./pages/Hub/UploadSong.tsx";
+import ListEventPage from "./pages/Hub/ListEventPage.tsx";
 
 
 const queryClient = new QueryClient();
@@ -52,6 +53,7 @@ const App = () => (
             <Route path="/hub/delete-user" element={<DeleteUserPage />} />
             <Route path="/hub/songs" element={<UploadSong />} />
             <Route path="/hub/music"   element={<MusicPage />} />
+            <Route path="/hub/events"   element={<ListEventPage />} />
             {/* DEJAR ESTO AL FINAL NO PONER NADA DEBAJO*/}
             <Route path="*" element={<NotFound />} />
           </Routes>

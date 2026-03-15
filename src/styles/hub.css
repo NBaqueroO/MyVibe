@@ -688,3 +688,82 @@
   background: #00bfa5;
   color: #ffffff;
 }
+
+/* --- Event Card --- */
+.event-card {
+  background: #112422;
+  border-radius: 12px;
+  overflow: hidden;
+  border: 1px solid #1e3532;
+  transition: border-color 0.15s ease;
+}
+.event-card:hover {
+  border-color: #00bfa5;
+}
+.event-card .cover {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 1;
+  overflow: hidden;
+}
+.event-card .cover img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.event-card .status {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  padding: 3px 10px;
+  border-radius: 20px;
+}
+.event-card .status.upcoming  { background: rgba(59, 130, 246, 0.85);  color: #ffffff; }
+.event-card .status.available { background: rgba(0, 191, 165, 0.85);   color: #ffffff; }
+.event-card .status.sold-out  { background: rgba(239, 68, 68, 0.85);   color: #ffffff; }
+.event-card .status.ongoing   { background: rgba(249, 115, 22, 0.85);  color: #ffffff; }
+.event-card .status.past      { background: rgba(255, 255, 255, 0.15); color: #ffffff; }
+.event-card .status.cancelled { background: rgba(31, 41, 55, 0.85);    color: #ffffff; }
+.event-card .info {
+  padding: 14px;
+}
+.event-card .info h3 {
+  font-size: 15px;
+  font-weight: 600;
+  color: #ffffff;
+  margin: 0 0 4px 0;
+}
+.event-card .info p {
+  font-size: 12px;
+  color: #4a6e6a;
+  margin: 0 0 12px 0;
+}
+.event-card .stats {
+  display: flex;
+  gap: 16px;
+  font-size: 13px;
+  color: #6a9e9a;
+}
+.add-to-calendar {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  margin-top: 12px;
+  padding: 6px 12px;
+  border: 1.5px solid #00bfa5;
+  border-radius: 20px;
+  background-color: transparent;
+  color: #00bfa5;
+  font-size: 12px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  letter-spacing: 0.3px;
+}
+.add-to-calendar:hover {
+  background-color: #00bfa5;
+  color: #ffffff;
+}
