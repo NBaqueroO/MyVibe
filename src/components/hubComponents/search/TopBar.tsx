@@ -1,4 +1,12 @@
+import { useNavigate } from 'react-router-dom';
+
 export default function Topbar() {
+  const navigate = useNavigate();
+
+  const handleUploadClick = () => {
+    navigate('/hub/songs');
+  };
+
   return (
     <header className="topbar">
 
@@ -12,7 +20,10 @@ export default function Topbar() {
         <span className="badge">Pro Artist</span>
       </div>
 
-      <button className="upload-btn">
+      <button 
+        className="upload-btn"
+        onClick={handleUploadClick}
+      >
         + Upload New
       </button>
 

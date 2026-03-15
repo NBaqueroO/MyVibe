@@ -8,5 +8,6 @@ export interface Song {
   plays: number;
   likes: number;
   status: SongStatus;
-  cover: string;
+  cover: string; // Ruta a assets/images/
+  audioUrl?: string; // Ruta a assets/songs/ (opcional por si algunas no tienen audio)
 }

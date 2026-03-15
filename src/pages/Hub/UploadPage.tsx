@@ -15,7 +15,8 @@ const songs: Song[] = [
     plays: 1200,
     likes: 450,
     status: "published",
-    cover: "/placeholder1.png",
+    cover: "neon-dreams.jpg", // Solo el nombre del archivo
+    audioUrl: "neon-dreams.mp3" // Archivo de audio
   },
   {
     id: "2",
@@ -25,7 +26,8 @@ const songs: Song[] = [
     plays: 0,
     likes: 0,
     status: "draft",
-    cover: "/placeholder2.png",
+    cover: "midnight-echoes.jpg",
+    audioUrl: "midnight-echoes.mp3"
   },
   {
     id: "3",
@@ -35,7 +37,8 @@ const songs: Song[] = [
     plays: 8400,
     likes: 2100,
     status: "published",
-    cover: "/placeholder3.png",
+    cover: "cyber-horizon.jpg",
+    audioUrl: "cyber-horizon.mp3"
   },
   {
     id: "4",
@@ -45,7 +48,8 @@ const songs: Song[] = [
     plays: 540,
     likes: 112,
     status: "published",
-    cover: "/placeholder4.png",
+    cover: "static-waves.jpg",
+    // Sin audioUrl porque es un EP
   },
 ];
 
@@ -63,8 +67,8 @@ export default function UploadsPage() {
         </section>
         <UploadGrid songs={songs} />
         <section className="stats">
-          <StatsCard label={t.hub.uploads.totalPlays}   value="10.5k" change="↑ 12% este mes" />
-          <StatsCard label={t.hub.uploads.totalLikes}   value="2.6k"  change="↑ 5% este mes" />
+          <StatsCard label={t.hub.uploads.totalPlays} value="10.5k" change="↑ 12% este mes" />
+          <StatsCard label={t.hub.uploads.totalLikes} value="2.6k" change="↑ 5% este mes" />
           <StatsCard label={t.hub.uploads.filesUploaded} value="24" />
         </section>
       </main>
