@@ -1,6 +1,7 @@
 import { Music, Globe } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { useI18n } from "@/contexts/I18nContext";
+import { Link } from "react-router-dom";
 
 const Navbar = () => {
   const { t, locale, toggleLocale } = useI18n();
@@ -18,9 +19,9 @@ const Navbar = () => {
         </div>
 
         <div className="hidden items-center gap-8 md:flex">
-          <a href="/hub/uploads/" className="text-sm text-muted-foreground transition-colors hover:text-foreground">{t.nav.explore}</a>
-          <a href="#" className="text-sm text-muted-foreground transition-colors hover:text-foreground">{t.nav.trends}</a>
-          <a href="#" className="text-sm text-muted-foreground transition-colors hover:text-foreground">{t.nav.community}</a>
+          <a href="/hub/profile/" className="text-sm text-muted-foreground transition-colors hover:text-foreground">{t.nav.explore}</a>
+          <a href="/hub/grid/" className="text-sm text-muted-foreground transition-colors hover:text-foreground">{t.nav.trends}</a>
+          <a href="/hub/uploads/" className="text-sm text-muted-foreground transition-colors hover:text-foreground">{t.nav.community}</a>
         </div>
 
         <div className="flex items-center gap-3">
@@ -31,12 +32,16 @@ const Navbar = () => {
             <Globe className="h-4 w-4" />
             {locale === "es" ? "EN" : "ES"}
           </button>
-          <Button variant="ghost" className="text-muted-foreground hover:text-foreground">
-            {t.nav.login}
-          </Button>
-          <Button className="bg-primary text-primary-foreground hover:bg-primary/90">
-            {t.nav.register}
-          </Button>
+          <Link to="/hub/signin">
+            <Button variant="ghost" className="text-muted-foreground hover:text-foreground">
+              {t.nav.login}
+            </Button>
+          </Link>
+          <Link to="/hub/signup">
+            <Button className="bg-primary text-primary-foreground hover:bg-primary/90">
+              {t.nav.register}
+            </Button>
+          </Link>
         </div>
       </div>
     </nav>
