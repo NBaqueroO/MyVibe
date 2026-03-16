@@ -53,7 +53,7 @@ const App = () => (
             <Route path="/hub/delete-user" element={<DeleteUserPage />} />
             <Route path="/hub/songs" element={<UploadSong />} />
             <Route path="/hub/music"   element={<MusicPage />} />
-            <Route path="/hub/events"   element={<ListEventPage />} />
+            <Route path="/hub/grid"   element={<ListEventPage />} />
             {/* DEJAR ESTO AL FINAL NO PONER NADA DEBAJO*/}
             <Route path="*" element={<NotFound />} />
           </Routes>

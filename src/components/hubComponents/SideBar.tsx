@@ -66,7 +66,7 @@ const NAV_ITEMS: NavItem[] = [
 ];
 
 const BOTTOM_ITEMS: NavItem[] = [
-  { id: "account",  href: "/hub/account",  icon: <UserIcon />,     label: "Account",  position: "bottom" },
+  //{ id: "account",  href: "/hub/account",  icon: <UserIcon />,     label: "Account",  position: "bottom" },
   { id: "settings", href: "/hub/settings", icon: <SettingsIcon />, label: "Settings", position: "bottom" },
 ];
 
